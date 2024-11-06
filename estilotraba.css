@@ -1,0 +1,102 @@
+:root {
+    --color-principal: rgba(128, 0, 0, 0.9); /* Vinotinto */
+    --color-secundario: #00274d; /* Azul oscuro */
+    --color-acento: #ffc300; /* Dorado suave */
+    --color-fondo: #f9f9f9; /* Fondo claro */
+    --texto-claro: #ffffff;
+    --texto-secundario: #e6e6e6;
+}
+
+/* Fondo y fuente general */
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-secundario);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Estilo del encabezado */
+header {
+    background-color: var(--color-principal);
+    color: var(--texto-claro);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--color-acento);
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    color: var(--texto-secundario);
+}
+
+/* Secciones de contenido */
+.content-section {
+    background-color: var(--color-secundario);
+    color: var(--texto-claro);
+    padding: 30px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.content-section h2 {
+    color: var(--color-acento);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Estilo de iframes y audio */
+iframe {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+audio {
+    width: 100%;
+    outline: none;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Botones y enlaces */
+.view-button {
+    display: inline-block;
+    background-color: var(--color-acento);
+    color: var(--color-principal);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.view-button:hover {
+    background-color: var(--color-principal);
+    color: var(--texto-claro);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-principal);
+    color: var(--texto-claro);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 5px solid var(--color-acento);
+}
+
+footer p {
+    margin: 0;
+}
