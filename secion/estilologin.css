@@ -1,0 +1,249 @@
+/* Definición de variables de CSS */
+:root {
+    --primary-color: #33383C; /* Color primario, un gris oscuro */
+}
+
+/* Aplica box-sizing a todos los elementos para que incluyan padding y borde en ancho y alto */
+* {
+    box-sizing: border-box;
+}
+
+/* Estilos para el cuerpo de la página */
+body {
+    height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+    display: flex; /* Centra el contenido usando flexbox */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    font-family: 'Josefin Sans', Arial, sans-serif; /* Fuente para el texto */
+    overflow: hidden; /* Oculta el contenido que se desborde */
+}
+
+/* Contenedor principal del formulario */
+.form-container {
+    -webkit-transform: translate3d(0, 0, 0); /* Mejora el rendimiento en navegadores webkit */
+    position: absolute; /* Posiciona el formulario de manera absoluta */
+    top: auto; /* Estas propiedades `auto` son innecesarias, ya que es el valor por defecto */
+    left: auto;
+    right: auto;
+    width: 100%; /* Ancho completo de la pantalla */
+    max-width: 450px; /* Máximo ancho del formulario */
+    background: white; /* Fondo blanco */
+    /* Sombra del contenedor para darle un efecto elevado */
+    box-shadow: 0 30px 35px -15px rgba(0, 0, 0, 0.3), 0 5px 15px -5px rgba(0, 0, 0, 0.4);
+    border-radius: 20px; /* Bordes redondeados */
+}
+
+/* Estilos para la primera etapa del formulario */
+.form-1 {
+    z-index: 2; /* Aparece sobre otros elementos */
+}
+
+/* Animación de retroceso en la primera etapa cuando se envía */
+.form-1.submitted {
+    animation: switchback 1.2s forwards; /* Aplica la animación de "switchback" */
+}
+
+/* Animación de avance en la primera etapa cuando regresa */
+.form-1.goback {
+    animation: switchfront 1.2s forwards; /* Aplica la animación de "switchfront" */
+}
+
+/* Segunda etapa del formulario */
+.form-2 {
+    z-index: 1; /* Debajo de `.form-1` en la pila de elementos */
+}
+
+/* Animación para traer al frente la segunda etapa del formulario */
+.form-2.pull {
+    animation: switchfront 1.2s forwards;
+}
+
+/* Animación para enviar la segunda etapa hacia atrás */
+.form-2.push {
+    animation: switchback 1.2s forwards;
+}
+
+/* Tercera etapa del formulario */
+.form-3 {
+    z-index: 3; /* Aparece sobre `.form-1` y `.form-2` */
+    transform: translateY(200%); /* Inicialmente fuera de vista, en la parte inferior */
+    transition: transform 0.5s; /* La transición dura 0.5 segundos */
+}
+
+/* Hace visible la tercera etapa del formulario cuando se activa */
+.form-3.active {
+    transform: translateY(0); /* Mueve el formulario al centro */
+}
+
+/* Agrega padding al contenedor interno */
+.padding-wrap {
+    padding: 20px 50px 40px; /* Ajusta el espacio interno */
+}
+
+/* Imagen del formulario */
+.form-image {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 220px; /* Altura fija */
+    background-size: cover; /* Asegura que la imagen cubra el área */
+    position: relative; /* Posiciona elementos hijos relativos a este */
+    border-radius: 20px 20px 0 0; /* Bordes superiores redondeados */
+    background-color: var(--primary-color); /* Color de fondo, usa la variable */
+}
+
+/* Estilos para cualquier elemento SVG dentro de .form-image */
+.form-image svg {
+    position: absolute; /* Posiciona el SVG absolutamente */
+    bottom: -1px; /* 1px debajo del contenedor */
+    left: 0;
+    right: 0;
+}
+
+/* Encabezado del formulario */
+h1 {
+    margin: 0; /* Elimina margen superior e inferior */
+    margin-bottom: 30px; /* Espacio inferior */
+    color: var(--primary-color); /* Color de texto primario */
+}
+
+/* Grupo de formulario, contenedor de cada campo */
+.form-group {
+    width: 100%; /* Ocupa todo el ancho */
+    position: relative; /* Para posicionar el label en relación al input */
+    margin-bottom: 30px; /* Separación entre grupos */
+}
+
+/* Estilos para los campos de entrada */
+.form-group input {
+    border: 0; /* Sin borde */
+    border-bottom: 1px solid black; /* Solo borde inferior */
+    width: 100%; /* Ancho completo */
+    padding: 8px; /* Espaciado interno */
+    transition: border-color 0.3s; /* Transición suave para el cambio de color del borde */
+}
+
+/* Cambios en el borde y outline cuando el campo está enfocado */
+.form-group input:focus {
+    outline: none; /* Sin outline */
+    border-color: var(--primary-color); /* Borde en color primario */
+}
+
+/* Animación para el label cuando el campo está en foco */
+.form-group input:focus + label {
+    transform: scale(0.8) translateY(-140%); /* Reduce y mueve el label */
+    color: var(--primary-color); /* Cambia el color del label */
+}
+
+/* Cambia el estilo del label si el campo es válido */
+.form-group input:valid + label {
+    transform: scale(0.8) translateY(-140%);
+    color: var(--primary-color);
+}
+
+/* Estilo inicial del label dentro de los campos */
+.form-group label {
+    position: absolute; /* Posiciona el label dentro del campo */
+    top: 8px; /* Margen superior */
+    left: 0; /* Pegado a la izquierda */
+    cursor: text; /* Cambia el cursor */
+    transition: transform 0.3s, color 0.3s; /* Transiciones para animación */
+}
+
+/* Botón de envío del formulario */
+input[type="submit"] {
+    width: 100%; /* Ancho completo */
+    padding: 15px; /* Espacio interno */
+    text-align: center; /* Texto centrado */
+    border-radius: 100px; /* Bordes completamente redondeados */
+    border: 0; /* Sin borde */
+    font-weight: bold; /* Texto en negrita */
+    background: var(--primary-color); /* Fondo con color primario */
+    color: white; /* Texto en blanco */
+    margin-bottom: 20px; /* Espaciado inferior */
+    transition: background 0.3s; /* Transición suave en el color de fondo */
+    cursor: pointer; /* Cambia el cursor a mano */
+}
+
+/* Cambios en el botón al pasar el ratón */
+input[type="submit"]:hover {
+    background: #fff; /* Fondo blanco */
+    outline: 2px solid var(--primary-color); /* Borde con el color primario */
+    color: var(--primary-color); /* Cambia el color del texto */
+}
+
+/* Elimina el outline del botón cuando está enfocado */
+input[type="submit"]:focus {
+    outline: none;
+}
+
+/* Enlace de inicio de sesión */
+.login {
+    display: block; /* Ocupa toda la línea */
+    text-align: center; /* Centrado */
+    font-size: 13px; /* Tamaño de fuente pequeño */
+}
+
+/* Enlaces de login */
+.login a {
+    color: #3b4371; /* Color inicial */
+    cursor: pointer; /* Cambia el cursor */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Color del enlace al pasar el ratón */
+.login a:hover {
+    color: #2a2f4f; /* Cambia el color del enlace */
+}
+
+/* Animación de retroceso */
+@keyframes switchback {
+    0% {
+        transform: translateX(0) scale(1);
+        z-index: 2;
+    }
+    25% {
+        transform: translateX(0) scale(1.1);
+        z-index: 2;
+    }
+    50% {
+        transform: translateX(-50%) scale(1.1);
+        z-index: 2;
+    }
+    75% {
+        transform: translateX(-50%) scale(0.9);
+        z-index: 2;
+    }
+    80% {
+        z-index: 1;
+    }
+    100% {
+        transform: translateX(0) scale(0.9);
+        z-index: 1;
+    }
+}
+
+/* Animación de avance */
+@keyframes switchfront {
+    0% {
+        transform: translateX(0) scale(0.9);
+        z-index: 1;
+    }
+    25% {
+        transform: translateX(0) scale(0.9);
+        z-index: 1;
+    }
+    50% {
+        transform: translateX(50%) scale(0.9);
+        z-index: 1;
+    }
+    75% {
+        transform: translateX(50%) scale(1);
+        z-index: 1;
+    }
+    80% {
+        z-index: 2;
+    }
+     100% {
+        transform: translateX(0) scale(1);
+        z-index: 2;
+    }
+}
