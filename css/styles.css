@@ -11252,3 +11252,6 @@ body {
 .view-button:hover {
   background-color: var(--bs-primary-dark);
 }
+.small-h1 {
+  font-size: 1.75rem; /* Ajusta el tamaño según tus preferencias */
+}
