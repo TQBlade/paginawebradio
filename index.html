@@ -26,6 +26,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="#trabajos">Trabajos</a></li>
                         <li class="nav-item"><a class="nav-link" href="perfiles.html">Créditos</a></li>
                         <li class="nav-item"><a class="nav-link" href="secion/login.html">Inicio de sesión</a></li>
@@ -41,81 +42,102 @@
                     <div class="text-center">
                         <!-- Clase aplicada para manejar estilos desde el CSS -->
                         <h1 class="masthead-title" style="font-size: 3rem;">Descubre el mundo de la radio</h1>
-                        <a class="btn btn-primary" href="#about">Empieza a explorar</a>
+                        <a class="btn btn-primary" href="#about"style="background-color: rgb(196, 230, 255); border-color: rgb(196, 230, 255); color: black;">Empieza a explorar</a>
                     </div>
                 </div>
             </div>
         </header>
         
         <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container px-4 px-lg-5">
+        <section class="about-section text-center" id="about" >
+            <div class="container px-4 px-lg-5"style="background-color: rgb(252, 208, 218); border-color: rgb(252, 208, 218);">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8">
-                        <h2 class="text-white mb-4">Estación dinamita </h2>
-                        <p class="text-white-50">
-                            Esta página ha sido creada con fines académicos para presentar todo el material audiovisual generado durante el Taller de Radio 1 del programa de Comunicación Social de la Universidad de Pamplona. A continuación, les presentamos a las estudiantes encargadas de esta página web.
+                        <h2 class="text-black mb-4">Estación dinamita </h2>
+                        <p class="text-black-50">
+                            Esta página ha sido creada con fines académicos, para presentar todo el material audiovisual generado durante el Taller de Radio 1 del programa de Comunicación Social de la Universidad de Pamplona ampliación Cúcuta.  A continuación, les presentamos a las estudiantes encargadas de esta página web
                         </p>
                     </div>
                 </div>
-                <img class="img-fluid" src="assets/img/url.png" alt="..." />
             </div>
         </section>
-
         <!-- Estilos adicionales para el carrusel -->
         <style>
             .carousel-section .container-sm {
-                max-width: 600px; /* Ajuste del tamaño del carrusel */
+                max-width: 700px; /* Ajuste del tamaño del carrusel */
             }
-            .carousel-img {
+            .carousel-media {
                 height: 400px; /* Altura fija para el carrusel */
-                object-fit: cover; /* Asegura que las imágenes se adapten al contenedor */
+                object-fit: cover; /* Asegura que las imágenes y videos se adapten al contenedor */
                 border-radius: 8px; /* Opcional: bordes redondeados */
                 cursor: pointer; /* Indica que es interactivo */
             }
-            .modal-img {
+            .modal-media {
                 width: 100%; /* Ocupa todo el ancho disponible */
                 height: auto; /* Mantiene la proporción */
                 transition: transform 0.3s ease-in-out; /* Animación suave de zoom */
             }
         </style>
 
-        <!-- Carrusel de imágenes ajustado -->
+        <!-- Carrusel de imágenes y videos ajustado -->
         <section class="carousel-section my-5">
             <div class="container-sm">
-                <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div id="mediaCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <!-- Primer slide activo -->
+                        <!-- Primer slide activo con imagen -->
                         <div class="carousel-item active">
-                            <img src="assets/img/melany.jpg" class="d-block w-100 carousel-img" alt="Imagen 1" onclick="openModal(this)">
+                            <img src="assets/img/melany.jpg" class="d-block w-100 carousel-media" alt="Imagen 1" onclick="openModal(this)">
                         </div>
-                        <!-- Segundo slide -->
+                        <!-- Segundo slide con video -->
                         <div class="carousel-item">
-                            <img src="assets/img/reina.jpg" class="d-block w-100 carousel-img" alt="Imagen 2" onclick="openModal(this)">
+                            <video class="d-block w-100 carousel-media" controls onclick="openModal(this)">
+                                <source src="assets/videos/video1.mp4" type="video/mp4">
+                                Tu navegador no soporta el video.
+                            </video>
                         </div>
-                        <!-- Tercer slide -->
+                        <!-- Tercer slide con imagen -->
                         <div class="carousel-item">
-                            <img src="assets/img/equipo.jpg" class="d-block w-100 carousel-img" alt="Imagen 3" onclick="openModal(this)">
+                            <img src="assets/img/reina.jpg" class="d-block w-100 carousel-media" alt="Imagen 2" onclick="openModal(this)">
                         </div>
-                        <!-- Cuarto slide -->
+                        <!-- Cuarto slide con video -->
                         <div class="carousel-item">
-                            <img src="assets/img/p1.jpg" class="d-block w-100 carousel-img" alt="Imagen 4" onclick="openModal(this)">
+                            <video class="d-block w-100 carousel-media" controls onclick="openModal(this)">
+                                <source src="assets/videos/video2.mp4" type="video/mp4">
+                                Tu navegador no soporta el video.
+                            </video>
                         </div>
-                        <!-- Quinto slide -->
+                        <!-- Otros slides con imágenes -->
                         <div class="carousel-item">
-                            <img src="assets/img/p2.jpg" class="d-block w-100 carousel-img" alt="Imagen 5" onclick="openModal(this)">
+                            <img src="assets/img/equipo.jpg" class="d-block w-100 carousel-media" alt="Imagen 3" onclick="openModal(this)">
                         </div>
-                        <!-- Sexto slide -->
                         <div class="carousel-item">
-                            <img src="assets/img/p4.jpg" class="d-block w-100 carousel-img" alt="Imagen 6" onclick="openModal(this)">
+                            <video class="d-block w-100 carousel-media" controls onclick="openModal(this)">
+                                <source src="assets/videos/video3.mp4" type="video/mp4">
+                                Tu navegador no soporta el video.
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img/p1.jpg" class="d-block w-100 carousel-media" alt="Imagen 4" onclick="openModal(this)">
+                        </div>
+                        <div class="carousel-item">
+                            <video class="d-block w-100 carousel-media" controls onclick="openModal(this)">
+                                <source src="assets/videos/video4.mp4" type="video/mp4">
+                                Tu navegador no soporta el video.
+                            </video>
+                        </div>
+                        <div class="carousel-item">
+                            <video class="d-block w-100 carousel-media" controls onclick="openModal(this)">
+                                <source src="assets/videos/video5.mp4" type="video/mp4">
+                                Tu navegador no soporta el video.
+                            </video>
                         </div>
                     </div>
                     <!-- Controles de navegación -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#mediaCarousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Anterior</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#mediaCarousel" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Siguiente</span>
                     </button>
@@ -123,12 +145,17 @@
             </div>
         </section>
 
-        <!-- Modal para imágenes con zoom -->
-        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <!-- Modal para imágenes y videos con zoom -->
+        <div class="modal fade" id="mediaModal" tabindex="-1" aria-labelledby="mediaModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <img id="modalImage" class="modal-img" src="" alt="Imagen ampliada">
+                        <!-- Imagen o Video Modal -->
+                        <img id="modalImage" class="modal-media" src="" alt="Imagen ampliada" style="display: none;">
+                        <video id="modalVideo" class="modal-media" controls style="display: none;">
+                            <source id="modalVideoSource" src="" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
                     </div>
                 </div>
             </div>
@@ -136,32 +163,51 @@
 
         <!-- Script para el modal -->
         <script>
-            // Abre el modal y muestra la imagen seleccionada
-            function openModal(imageElement) {
+            // Abre el modal y muestra la imagen o video seleccionado
+            function openModal(mediaElement) {
                 const modalImage = document.getElementById('modalImage');
-                modalImage.src = imageElement.src;
-                modalImage.style.transform = "scale(1)"; // Reinicia el zoom al abrir el modal
-                const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+                const modalVideo = document.getElementById('modalVideo');
+                const modalVideoSource = document.getElementById('modalVideoSource');
+
+                // Oculta el video o la imagen si ya se muestran en el modal
+                modalImage.style.display = "none";
+                modalVideo.style.display = "none";
+
+                // Si es una imagen, muestra la imagen en el modal
+                if (mediaElement.tagName.toLowerCase() === "img") {
+                    modalImage.src = mediaElement.src;
+                    modalImage.style.display = "block"; // Muestra la imagen
+                } 
+                // Si es un video, muestra el video en el modal
+                else if (mediaElement.tagName.toLowerCase() === "video") {
+                    modalVideoSource.src = mediaElement.getElementsByTagName('source')[0].src;
+                    modalVideo.style.display = "block"; // Muestra el video
+                    modalVideo.load(); // Recarga el video
+                }
+
+                // Muestra el modal
+                const modal = new bootstrap.Modal(document.getElementById('mediaModal'));
                 modal.show();
 
-                // Agrega zoom con el scroll del mouse
-                modalImage.addEventListener('wheel', (event) => {
-                    event.preventDefault();
-                    const scaleStep = 0.1;
-                    let currentScale = parseFloat(modalImage.style.transform.replace('scale(', '').replace(')', '')) || 1;
+                // Agrega zoom con el scroll del mouse solo en imágenes
+                if (mediaElement.tagName.toLowerCase() === "img") {
+                    modalImage.addEventListener('wheel', (event) => {
+                        event.preventDefault();
+                        const scaleStep = 0.1;
+                        let currentScale = parseFloat(modalImage.style.transform.replace('scale(', '').replace(')', '')) || 1;
 
-                    // Calcula el nuevo nivel de zoom
-                    if (event.deltaY < 0) {
-                        currentScale += scaleStep; // Acerca
-                    } else {
-                        currentScale = Math.max(1, currentScale - scaleStep); // Aleja, pero no menor a escala 1
-                    }
+                        // Calcula el nuevo nivel de zoom
+                        if (event.deltaY < 0) {
+                            currentScale += scaleStep; // Acerca
+                        } else {
+                            currentScale = Math.max(1, currentScale - scaleStep); // Aleja, pero no menor a escala 1
+                        }
 
-                    modalImage.style.transform = `scale(${currentScale})`;
-                });
+                        modalImage.style.transform = `scale(${currentScale})`;
+                    });
+                }
             }
         </script>
-
 
 
         <!-- Trabajos-->
@@ -175,7 +221,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Cuento la Cenicienta con sonidos naturales</h5>
                                 <p class="card-text">¿Alguna vez habías escuchado este cuento con sonidos naturales?</p>
-                                <a href="trabajos/tarea1.html" class="btn btn-primary"style="background-color: rgb(252, 208, 218); border-color: rgb(252, 208, 218); color: black;">Ver Trabajo</a>
+                                <a href="trabajos/tarea1.html" class="btn btn-primary"style="background-color: rgb(196, 230, 255); border-color: rgb(196, 230, 255); color: black;">Ver Trabajo</a>
                             </div>
                         </div>
                     </div>
@@ -199,7 +245,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Spot corto</h5>
                                 <p class="card-text">Cada momento es una sonrisa que nunca se detiene.</p>
-                                <a href="trabajos/tarea3.html" class="btn btn-primary"style="background-color: rgb(252, 208, 218); border-color: rgb(252, 208, 218); color: black;">Ver Trabajo</a>
+                                <a href="trabajos/tarea3.html" class="btn btn-primary"style="background-color: rgb(196, 230, 255); border-color: rgb(196, 230, 255); color: black;">Ver Trabajo</a>
                             </div>
                         </div>
                     </div>
@@ -223,7 +269,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Novenas Navideñas</h5>
                                 <p class="card-text">Te invitamos a sintonizar nuestro primer especial en la Radio San José de Cúcuta. En "Sin Protocolo”</p>
-                                <a href="trabajos/tarea5.html" class="btn btn-primary"style="background-color: rgb(252, 208, 218); border-color: rgb(252, 208, 218); color: black;">Ver Trabajo</a>
+                                <a href="trabajos/tarea5.html" class="btn btn-primary"style="background-color: rgb(196, 230, 255); border-color: rgb(196, 230, 255); color: black;">Ver Trabajo</a>
                             </div>
                         </div>
                     </div>
@@ -232,7 +278,7 @@
         </section>
 
         <!-- Contact Section-->
-        <section class="contact-section bg-pink">
+        <section class="contact-section" style="background-color: rgb(252, 208, 218); border-color: rgb(252, 208, 218);">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5">
                     <div class="col-md-6 mb-3 mb-md-0">
@@ -270,7 +316,7 @@
         </section>
 
         <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50">
+        <footer class="footer small text-center text-black-50" style="background-color: rgb(252, 208, 218); border-color: rgb(252, 208, 218);">
             <div class="container px-4 px-lg-5">&copy; 2024 Visualización de Trabajos. Todos los derechos reservados.Desarrollado por Juan Felipe Mantilla.</div>
         </footer>
 
@@ -285,8 +331,10 @@
             }
         </script>
 
-        <audio autoplay loop>
-            <source src="ttps://www.dropbox.com/scl/fi/7d6rhba8a7ojtqlp3v5bm/3-nov-4.21-p.-m..m4a?rlkey=z8tgw8ym56ykgog4ew6h6lfop&st=jyspg3rf&dl=1" type="audio/mp3">
-        </audio>
+    <audio autoplay loop>
+        <source src="https://www.dropbox.com/scl/fi/yitq42ffcfyk0yum17d4c/Audio-de-WhatsApp-2024-11-22-a-las-00.00.13_2abb0421.mp3?rlkey=m7qen738m07mqpaxpvenh6eib&st=t60g8w2l&dl=1" type="audio/mp3">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+        
     </body>
 </html>

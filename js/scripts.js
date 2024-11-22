@@ -50,5 +50,10 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
+    const carouselElement = document.getElementById('mediaCarousel');
+    const carousel = new bootstrap.Carousel(carouselElement, {
+        interval: 500000000000000 // Establece el intervalo en 5 segundos
+    });
+
     
 });
